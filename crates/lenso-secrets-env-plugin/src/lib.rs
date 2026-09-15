@@ -1,5 +1,8 @@
 //! Allowlisted environment-backed Secrets Provider Plugin for Lenso vNext.
 
+#[cfg(feature = "workers")]
+pub mod workers;
+
 use std::{collections::BTreeMap, error::Error, fmt, rc::Rc};
 
 use lenso_capability_secrets::{

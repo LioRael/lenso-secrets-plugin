@@ -134,3 +134,8 @@ cargo clippy --locked --workspace --all-targets -- -D warnings
 `lenso-capability-secrets` and the Environment Provider are published. The
 remaining Provider crates follow the reviewed, manual-only process in
 [`docs/release-process.md`](docs/release-process.md).
+
+## Workers
+
+The Env Secrets provider has an opt-in `workers` binding factory with the same
+reference allowlist and lifecycle. See [Workers assembly and qualification](docs/workers.md).

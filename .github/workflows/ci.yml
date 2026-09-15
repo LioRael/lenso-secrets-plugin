@@ -35,3 +35,23 @@ jobs:
           cargo package --locked --list -p lenso-secrets-keychain-plugin
           cargo package --locked --list -p lenso-secrets-encrypted-file-plugin
           cargo package --locked --list -p lenso-secrets-command-plugin
+
+  workers:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+      - uses: dtolnay/rust-toolchain@fa04a1451ff1842e2626ccb99004d0195b455a88
+        with:
+          toolchain: 1.94.0
+          components: clippy
+          targets: wasm32-unknown-unknown
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm install --global pnpm@11.5.0
+      - run: pnpm --dir workers install --frozen-lockfile
+      - run: cargo clippy --locked -p lenso-secrets-env-plugin -p lenso-secrets-workers-smoke --features lenso-secrets-env-plugin/workers --target wasm32-unknown-unknown -- -D warnings
+      - run: cargo package --locked -p lenso-secrets-env-plugin --features workers --target wasm32-unknown-unknown
+      - run: cargo install wasm-bindgen-cli --version 0.2.127 --locked
+      - run: bash workers/build.sh
+      - run: node workers/proof.mjs
