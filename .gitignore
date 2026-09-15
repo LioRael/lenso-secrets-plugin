@@ -1,3 +1,9 @@
 /target
 *.swp
 .DS_Store
+
+/workers/node_modules
+/workers/pkg
+/workers/*.bundle.mjs
+/workers/.wrangler
+/.wrangler

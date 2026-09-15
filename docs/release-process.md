@@ -59,3 +59,13 @@ cargo package --locked --list -p lenso-secrets-keychain-plugin
 The Keychain Provider's macOS behavior must also pass on a macOS runner before
 publication. Generated Capability projections are locked artifacts and must
 not be edited by hand.
+
+## Workers bindings release
+
+`lenso-secrets-env-plugin` 0.1.8 adds the optional `workers` binding factory.
+Its minimum Kernel and Native Adapter versions are 0.3.6 and 0.3.14; the other
+Providers retain their existing dependency requirements and published versions.
+The Workers smoke Host remains private. Publish this reviewed release branch
+through the existing dry-run and OIDC live workflow after main CI succeeds.
+Native and actual workerd tests, as well as a packaged Wasm build, qualify the
+new factory. No new package allocation or production secret migration is needed.

@@ -1,0 +1,8 @@
+{
+  "passed": 14,
+  "runtime": "workerd",
+  "workers_runtime": "0.1.2",
+  "wasm_sha256": "f504849546d5fc117ab64796b1c40f1abf81226098ca73cd55e45449d2e74b0e",
+  "package": "lenso-secrets-env-plugin",
+  "version": "0.1.8"
+}
