@@ -1,0 +1,16 @@
+crates/lenso-capability-secrets/Cargo.toml
+  h_9d56aba080c170 4
+crates/lenso-secrets-env-plugin/Cargo.toml
+  h_9d56aba080c170 4
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "225fd78256d58a3170ce4736cbbe5f9e072a18c5",
+  "prompts": {},
+  "humans": {
+    "h_9d56aba080c170": {
+      "author": "LioRael <leo@lenso.dev>"
+    }
+  }
+}
